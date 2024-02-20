@@ -1,0 +1,12 @@
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+  "id": "{{$random.uuid}}",
+  "accountId": "{{$random.uuid}}",
+  "customerName": "{{$random.alphabetic(10)}}",
+  "cardNumber": "{{$random.alphanumeric(20)}}",
+  "cardType": "{{$random.alphanumeric(5)}}",
+  "date": "{{$timestamp}}",
+  "amount": "{{$random.float(10,2000)}}"
+}

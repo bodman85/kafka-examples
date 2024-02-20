@@ -1,0 +1,14 @@
+{
+  "type": "enum",
+  "namespace": "com.luxoft.lmd.kafka.streams",
+  "name": "ProductType",
+  "symbols": [
+    "ELECTRONICS",
+    "FASHION",
+    "HOUSEHOLD",
+    "SPORT",
+    "HEALTH",
+    "COFFEE",
+    "FOOD"
+  ]
+}

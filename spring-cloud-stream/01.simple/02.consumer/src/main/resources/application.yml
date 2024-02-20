@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        transactionConsumer-in-0:
+          destination: credit-card-transactions
+          #group: fraud-detection
+
+server:
+  port: 0

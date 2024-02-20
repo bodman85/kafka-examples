@@ -1,0 +1,11 @@
+= Topic creation
+
+This project shows multiple ways you can create your topics directly from code.
+
+[WARNING]
+====
+* In the production environment your credentials to Kafka might have topic creation privileges revoked.
+* If you create a topic with some setup (partition count, replication factor) and then later on change this configuration in code Spring will AUTOMATICALLY apply those changes to existing topics. This is VERY RISKY: if your topic uses keys to achieve partial data ordering - you will break your system!.
+====
+
+Inspect `com.luxoft.lmd.kafka.KafkaConfig` to understand what options you have to manage topic creation.

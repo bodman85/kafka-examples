@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "namespace": "com.luxoft.lmd.kafka.streams",
+  "name": "Product",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "ean",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": "com.luxoft.lmd.kafka.streams.ProductType"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ]
+}

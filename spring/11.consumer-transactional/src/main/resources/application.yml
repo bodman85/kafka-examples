@@ -1,0 +1,6 @@
+spring:
+  kafka:
+    consumer:
+      group-id: transactionEnabledConsumers
+      auto-offset-reset: latest
+      isolation-level: read_committed

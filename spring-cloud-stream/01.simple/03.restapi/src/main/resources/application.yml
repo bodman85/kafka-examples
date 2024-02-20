@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    stream:
+      output-bindings: transactions
+      bindings:
+        transactions:
+          destination: credit-card-transactions
+server:
+  port: 8080

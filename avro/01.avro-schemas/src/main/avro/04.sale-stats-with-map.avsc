@@ -1,0 +1,33 @@
+{
+  "type": "record",
+  "name": "SaleStats",
+  "namespace": "com.luxoft.lmd.domain.salestats",
+  "fields": [
+    {
+      "name": "year",
+      "type": "int"
+    },
+    {
+      "name": "month",
+      "type": "int"
+    },
+    {
+      "name": "groupNameToSaleValueMap",
+      "type": {
+        "type": "map",
+        "values": "double"
+      }
+    },
+    {
+      "name": "optionalMetadata",
+      "type": [
+        "null",
+        {
+          "type": "map",
+          "values": "string"
+        }
+      ],
+      "default": null
+    }
+  ]
+}

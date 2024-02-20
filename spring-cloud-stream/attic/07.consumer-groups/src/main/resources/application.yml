@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        transactionConsumer-in-0:
+          destination: credit-card-transactions
+          group: fraud-detection
+
+server:
+  port: 0
+
+logging:
+  pattern:
+    console: "[%blue(%18thread)] %date{HH:mm.ss:SSS} [%cyan(%45logger{45})] %highlight(%-5level) %yellow(%X) %msg%n"

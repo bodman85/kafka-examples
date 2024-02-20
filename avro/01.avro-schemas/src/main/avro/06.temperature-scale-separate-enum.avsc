@@ -1,0 +1,9 @@
+{
+  "type": "enum",
+  "namespace": "com.luxoft.lmd.domain",
+  "name": "TemperatureScale",
+  "symbols": [
+    "CELCIUS",
+    "FAHRENHEIT"
+  ]
+}

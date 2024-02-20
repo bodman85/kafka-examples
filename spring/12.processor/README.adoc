@@ -1,0 +1,17 @@
+= Processor
+
+Up until now we were inspecting examples of data being either produced (the beginning of the processing pipeline) or consumed (the terminal, last operation of processing).
+
+We now introduce a processor pattern:
+
+* Processor is a consumer - it reads data from a topic
+* Processor is processing data somehow - transforming it or invoking side actions
+* Processor is a producer - the result of processing is published as a new message to a new topic.
+
+Inspect `com.luxoft.lmd.kafka.DataProcessor`:
+
+* @KafkaListener annotated method returns a result now instead of void.
+
+* This result will be automatically directed to a new topic. We use a new `@SendTo` annotation to specify the destination.
+
+* This processor is transactional. In case the processing fails the input message will be re-read from the topic and processing will be repeated so we do not loose that event.

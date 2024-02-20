@@ -1,0 +1,16 @@
+spring:
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+      - localhost:9093
+      - localhost:9094
+
+    streams:
+      application-id: topic-extractor
+      properties:
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+
+logging:
+  level:
+    org.springframework.kafka.config.StreamsBuilderFactoryBean: debug

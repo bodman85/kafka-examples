@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        namesGenerator-out-0:
+          destination: funny-names
+        namesConsumer-in-0:
+          destination: funny-names
+    function:
+      definition: namesGenerator;namesConsumer
+server:
+  port: 0

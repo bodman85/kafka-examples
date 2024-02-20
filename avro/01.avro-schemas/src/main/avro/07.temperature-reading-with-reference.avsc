@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "TemperatureReading",
+  "namespace": "com.luxoft.lmd.domain.temperature",
+  "fields": [
+    {
+      "name": "date",
+      "type": {
+        "type": "long",
+        "logicalType": "local-timestamp-millis"
+      }
+    },
+    {
+      "name": "value",
+      "type": "double"
+    },
+    {
+      "name": "scale",
+      // you can skip namespace if it matches current schema
+      "type": "com.luxoft.lmd.domain.TemperatureScale"
+    }
+  ]
+}

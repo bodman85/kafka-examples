@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        transactionConsumer-in-0:
+          consumer:
+            instance-index: -1
+            instance-index-list:
+              - 0
+              - 1
+              - 2
+              - 3
+              - 4

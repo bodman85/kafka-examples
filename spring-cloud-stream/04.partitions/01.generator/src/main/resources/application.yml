@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        transactionGenerator-out-0:
+          destination: credit-card-transactions
+          producer:
+            poller:
+              fixed-delay: 250
+            partition-count: 10
+      kafka:
+        binder:
+          replication-factor: 3
+        bindings:
+          transactionGenerator-out-0:
+            producer:
+              message-key-expression: headers['partitionKey'].getBytes()
+
+
+server:
+  port: 0

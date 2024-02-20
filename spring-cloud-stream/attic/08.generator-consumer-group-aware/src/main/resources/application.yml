@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        transactionGenerator-out-0:
+          destination: credit-card-transactions
+          producer:
+            required-groups:
+              - fraud-detection
+              - analytics
+              - logging
+server:
+  port: 0

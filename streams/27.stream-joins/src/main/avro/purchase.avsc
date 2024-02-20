@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "namespace": "com.luxoft.lmd.kafka.streams",
+  "name": "Purchase",
+  "fields": [
+    {"name": "customerId", "type": "string"},
+    {"name": "productId", "type": "string"},
+    {
+      "name": "date",
+      "type": {"type": "long", "logicalType": "local-timestamp-millis"}
+    },
+    {"name": "quantity", "type": "int"},
+    {"name": "price", "type": "double"}
+  ]
+}

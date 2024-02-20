@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+      - localhost:9093
+      - localhost:9094
+    consumer:
+      auto-offset-reset: earliest
+    #properties:
+        #max.poll.interval.ms: 5000

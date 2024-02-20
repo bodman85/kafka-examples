@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.4'
+    id 'io.spring.dependency-management' version '1.1.3'
+
+	// plugin for managing AVRO schemas
+    id "com.github.davidmc24.gradle.plugin.avro" version '1.5.0'
+}
+
+group = 'com.luxoft.lmd'
+version = '0.0.1-SNAPSHOT'
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url = uri("https://packages.confluent.io/maven/")
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    // depending on Kafka clients only, not Spring for Kafka
+    implementation 'org.apache.kafka:kafka-clients:3.6.1'
+
+    // just some utilities to make Java less painful
+    implementation 'com.google.guava:guava:33.0.0-jre'
+
+    //the library to generate quality fake data
+    implementation 'net.datafaker:datafaker:2.0.2'
+
+	// dependency for handling AVRO format
+    implementation 'io.confluent:kafka-avro-serializer:7.4.2'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

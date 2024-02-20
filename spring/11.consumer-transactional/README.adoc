@@ -1,0 +1,9 @@
+= Transactional consumer
+
+It is surprising for Kafka newcomers that transaction support needs to be enabled also on consuming side. We are used to using relational databases in which we never see uncommited data (database drivers default to `READ_UNCOMMITED`).
+
+In Kafka by default you read ALL records: those from succeeded transaction but also from failed ones.
+
+You need to be aware your producer sends data in transactions and on the consuming side set:
+
+`spring.kafka.consumer.isolation-level=read_commited`

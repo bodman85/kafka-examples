@@ -1,0 +1,16 @@
+= Simplest producer
+
+This is the simplest producer using Spring for Kafka integration.
+
+Inspect `com.luxoft.lmd.kafka.AppRunner` for actual code.
+
+
+Make sure you notice:
+
+* no configuration provided in application.{properties|yaml}
++
+Spring assumes that local Kafka cluster listens on `localhost:9092` without credentials required.
+
+* We use an injected `KafkaTemplate` - we did not create that bean. Spring Boot starter pack did it for us.
+
+* You do not have to create the `ProducerRecord` you know from Kafka Java Client API - `KafkaTemplate` has multiple variants of `send()` method to simplify message sending.

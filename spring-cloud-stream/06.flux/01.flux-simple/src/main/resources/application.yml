@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        transactionGenerator-out-0:
+          destination: credit-card-transactions
+        filterLargeSpendings|transform-in-0:
+          destination: credit-card-transactions
+          group: large-spending-filter
+        filterLargeSpendings|transform-out-0:
+          destination: big-spendings
+        bigSpendingConsumer-in-0:
+          destination: big-spendings
+          group: big-spendings-consumer
+    function:
+      definition: transactionGenerator;filterLargeSpendings|transform;bigSpendingConsumer
+
+server:
+  port: 0

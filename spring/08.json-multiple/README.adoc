@@ -1,0 +1,7 @@
+= Handling multiple data types in one topic
+
+This project is the extension of previous JSON setup. This time we assume one topic will be getting different data types. These might be different document types like in this example.
+
+Other example of having multiple different data types in just one topic is using Kafka for EventStreaming and posting all domain modification events to Kafka so that read models can update their data state.
+
+Inspect `com.luxoft.lmd.kafka.DataListener`. Notice `@KafkaListener` being placed both at class and method level.

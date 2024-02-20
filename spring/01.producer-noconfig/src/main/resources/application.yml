@@ -1,0 +1,5 @@
+#this is the simplest Spring for Kafka application
+#org.springframework.boot.autoconfigure.kafka.KafkaProperties has a bunch of sensible defaults
+#
+# - String serializer/deserializer for keys and values
+# - localhost:9092 as default broker address

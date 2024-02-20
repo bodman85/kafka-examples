@@ -1,0 +1,9 @@
+= Configured consumer
+
+This example shows you the possibility to customize the producer functionality Spring for Kafka using configuration only. The code does not change from previous example - we are only customizing the producer using application.{properties|yaml}
+
+Inspect `src/main/application.yml`.
+
+Whole `spring.kafka.*` configuration tree is being backed up by `org.springframework.boot.autoconfigure.kafka.KafkaProperties` class which you can analyze for possible options to set.
+
+Some portion of configuration will be common for all clients (producer, consumer, admin, streams). Some is only for some particular client type.

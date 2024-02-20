@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    stream:
+      output-bindings: words
+      bindings:
+        words:
+          destination: words
+          producer:
+            partition-count: 3
+        wordConsumer-in-0:
+          destination: words
+          group: word-consumer
+      kafka:
+        binder:
+          transaction:
+            transaction-id-prefix: tx-
+          required-acks: all
+          configuration:
+            isolation.level: read_committed
+logging:
+  pattern:
+    console: "[%blue(%18thread)] %date{HH:mm.ss:SSS} [%cyan(%45logger{45})] %highlight(%-5level) %yellow(%X) %msg%n"
+  level:
+    org:
+      springframework:
+        kafka: warn

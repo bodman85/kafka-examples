@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: kafka-streams-01
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+      - localhost:9093
+      - localhost:9094    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+
+    properties:
+      schema.registry.url: http://localhost:8085

@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        transactionGenerator-out-0:
+          destination: credit-card-transactions
+          producer:
+            partition-count: 10
+
+      kafka:
+        binder:
+          replication-factor: 3
+
+server:
+  port: 0

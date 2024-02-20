@@ -1,0 +1,7 @@
+// successful tx
+POST http://localhost:8080/?word=hello
+
+###
+
+// failed tx
+POST http://localhost:8080/?word=throw

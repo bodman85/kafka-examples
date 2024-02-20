@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "namespace": "com.luxoft.lmd.kafka.streams",
+  "name": "CountryPurchaseTotals",
+  "fields": [
+    {"name": "countryCode", "type": "string"},
+    {"name": "totalValue", "type": "double"}
+  ]
+}

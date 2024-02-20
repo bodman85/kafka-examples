@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "namespace": "com.luxoft.lmd.kafka.streams",
+  "name": "ProductPurchaseTotals",
+  "fields": [
+    {"name": "productId", "type": "string", "default": ""},
+    {"name": "totalQuantity", "type": "int", "default": 0},
+    {"name": "totalValue", "type": "double", "default": 0.0}
+  ]
+}

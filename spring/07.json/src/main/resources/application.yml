@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: setMe
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+      - localhost:9093
+      - localhost:9094
+    producer:
+      properties:
+        partitioner.class: org.apache.kafka.clients.producer.RoundRobinPartitioner
+    consumer:
+      group-id: clickInfoAggregator
+      auto-offset-reset: latest

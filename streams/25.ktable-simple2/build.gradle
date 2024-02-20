@@ -1,0 +1,8 @@
+plugins {
+    id 'com.luxoft.lmd.kafka-streams-app'
+}
+
+dependencies {
+    implementation project(':streams-00-shared')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}

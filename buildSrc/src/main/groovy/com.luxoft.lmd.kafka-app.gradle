@@ -1,0 +1,14 @@
+plugins {
+    id 'com.luxoft.lmd.boot-app'
+
+    // plugin for managing AVRO schemas
+    id "com.github.davidmc24.gradle.plugin.avro"
+}
+
+dependencies {
+    // depending on Kafka clients only, not Spring for Kafka
+    implementation 'org.apache.kafka:kafka-clients:3.6.1'
+
+    // dependency for handling AVRO format
+    implementation 'io.confluent:kafka-avro-serializer:7.4.2'
+}

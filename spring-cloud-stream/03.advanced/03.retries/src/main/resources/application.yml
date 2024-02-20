@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        dataProducer-out-0:
+          destination: words
+        wordConsumer-in-0:
+          destination: words
+          group: word-consumer
+          consumer:
+            max-attempts: 3
+            back-off-initial-interval: 1000
+            back-off-max-interval: 30000
+            back-off-multiplier: 1.5
+            default-retryable: true
+            retryable-exceptions:
+              java.lang.IllegalArgumentException: false
+      kafka:
+        binder:
+          required-acks: all
+        bindings:
+          wordConsumer-in-0:
+            consumer:
+              enable-dlq: true
+              dlq-name: words.errors
+    function:
+      definition: dataProducer;wordConsumer
+server:
+  port: 0

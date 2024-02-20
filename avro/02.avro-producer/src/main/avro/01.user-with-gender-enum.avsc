@@ -1,0 +1,43 @@
+{
+  "type": "record",
+  "name": "User",
+  "namespace": "com.luxoft.lmd.domain",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string",
+      "doc": "First name"
+    },
+    {
+      "name": "lastName",
+      "type": "string",
+      "doc": "Last name"
+    },
+    {
+      "name": "age",
+      "type": "int"
+    },
+    {
+      "name": "nickname",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "doc": "nickname, optional"
+    },
+    {
+      "name": "gender",
+      "type": {
+        "type": "enum",
+        "name": "Gender",
+        "symbols": [
+          "MALE",
+          "FEMALE",
+          "NOT_SPECIFIED"
+        ]
+      },
+      "doc": "gender enum, use NOT_SPECIFIED instead of null"
+    }
+  ]
+}

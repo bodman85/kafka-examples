@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        dataGenerator-out-0:
+          destination: purchases
+        splitter-in-0:
+          destination: purchases
+          group: splitter
+        splitter-out-0:
+          destination: purchases.coffee
+        splitter-out-1:
+          destination: purchases.electronics
+        electronicsPurchasesConsumer-in-0:
+          destination: purchases.electronics
+          group: dumper
+    function:
+      definition: dataGenerator;splitter;electronicsPurchasesConsumer
+
+server:
+  port: 0

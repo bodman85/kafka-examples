@@ -1,0 +1,42 @@
+{
+  "type": "record",
+  "name": "Purchase",
+  "namespace": "com.luxoft.lmd.domain",
+  "fields": [
+    {
+      "name": "customerId",
+      "type": "string"
+    },
+    {
+      "name": "date",
+      "type": {
+        "type": "long",
+        "logicalType": "local-timestamp-millis"
+      }
+    },
+    {
+      "name": "productInfo",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "ProductInfo",
+          "fields": [
+            {
+              "name": "productId",
+              "type": "string"
+            },
+            {
+              "name": "productName",
+              "type": ["null", "string"]
+            },
+            {
+              "name": "purchaseValue",
+              "type": "double"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

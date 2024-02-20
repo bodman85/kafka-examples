@@ -1,0 +1,23 @@
+= Producing and consuming data in JSON format
+
+This project shows one of many ways to configure JSON support for Kafka. Apart from that some configuration is done not only in application.{properties|yaml}, but this time also in code.
+
+== Producer
+
+* We need to create a `ProducerFactory` - Spring will create multiple producers based on application needs.
+
+* `com.luxoft.lmd.kafka.KafkaProducerConfiguration`: custom `ProducerFactory` fetches some configuration from application.yml further customizing it: i.e. setting up the `JsonSerializer`.
+
+* Our job is also to create a KafkaTemplate, backed up by our custom producer factory.
+
+* Notice your KafkaTemplate is strongly typed to support a specific payload type.
+
+== Consumer
+
+* Similar rules apply to consuming part of the application.
+
+* We create not creating Kafka consumers directly. We are providing a set up factory and Spring will decide how many consumer instances to create.
+
+* Consumer itself is not enough. We need an additional thread that will be polling for data from Kafka and dispatching the records to our callback method. This is called `KafkaListenerContainer` and we also need to create a factory for that.
+
+* In `com.luxoft.lmd.kafka.DataConsumer` we reference a specific containerFactory that our `@KafkaListener` is connected to.

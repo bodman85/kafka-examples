@@ -1,0 +1,17 @@
+= Transactional producer
+
+To enable transactional message sending to Kafka perform following steps:
+
+* define `spring.kafka.producer.transaction-id-prefix` in application.{properties|yaml}
+
+* Annotate the sending method with `@org.springframework.transaction.annotation.Transactional` annotation.
+
+* Spring will:
+
+** Automatically detect this configuration for you
+
+** create a `KafkaTransactionManager`
+
+** manage transaction for you for annotated methods.
+
+WARNING: Remember there is no way for Kafka transactions to participate in relational database transactions. There is no XA (distributed transactions) support.

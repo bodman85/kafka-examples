@@ -1,0 +1,15 @@
+= Concurrency
+
+A topic has to be created partition count number > 0 to allow multiple consumers consuming in parallel.
+
+You can run this application multiple times in your IDE. Watch the logs to find out how partitions have been assigned to each consumer.
+
+You can also run multiple consumers in just one app. Spring for Kafka will spin up multiple consumers on multiple threads.
+
+* `com.luxoft.lmd.kafka.DataListener` listener sleeps for 1 second. That emulates long processing time.
+
+* At the same time the messages are produced in a rate of 2 messages/s - data is produced faster than we can consume it.
+
+* Use Kafka web UI (i.e. AKHQ) to find out what current consumer group lag is. Notice that it is growing all the time - our system cannot process data fast enough.
+
+* Enable concurrency at the level of `@KafkaListener` - find the proper setting to mitigate slow processing and get the consumer lag value close to 0 and NOT GROWING.

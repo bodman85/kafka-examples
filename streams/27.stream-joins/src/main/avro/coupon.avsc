@@ -1,0 +1,22 @@
+{
+  "type": "record",
+  "namespace": "com.luxoft.lmd.kafka.stream",
+  "name": "Coupon",
+  "fields": [
+    {
+      "name": "customerId",
+      "type": "string"
+    },
+    {
+      "name": "expires",
+      "type": {
+        "type": "long",
+        "logicalType": "local-timestamp-millis"
+      }
+    },
+    {
+      "name": "value",
+      "type": "double"
+    }
+  ]
+}

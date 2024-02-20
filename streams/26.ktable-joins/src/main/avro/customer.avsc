@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "namespace": "com.luxoft.lmd.kafka.streams",
+  "name": "Customer",
+  "fields": [
+    {"name": "id", "type": "string"},
+    {"name": "countryCode", "type": "string"},
+    {"name": "name", "type": "string"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "UserId",
+  "namespace": "com.luxoft.lmd.kafka.streams",
+  "fields": [
+    {
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "name": "pesel",
+      "type": "string"
+    }
+  ]
+}

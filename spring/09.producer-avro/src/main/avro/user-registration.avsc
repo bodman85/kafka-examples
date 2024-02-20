@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "UserRegistration",
+  "namespace": "com.luxoft.lmd.kafka.domain",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "lastName",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+plugins {
+    id 'com.luxoft.lmd.java'
+}
+
+dependencies {
+    implementation 'ch.qos.logback:logback-classic:1.4.12'
+    implementation 'net.datafaker:datafaker:2.0.2'
+}

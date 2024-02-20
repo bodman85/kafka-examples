@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        namesGenerator-out-0:
+          destination: funny-names
+        uppercase-in-0:
+          destination: funny-names
+          group: uppercaser
+        uppercase-out-0:
+          destination: funny-names.processed
+        namesConsumer-in-0:
+          destination: funny-names.processed
+          group: namesConsumer
+    function:
+      definition: namesGenerator;namesConsumer;uppercase
+
+server:
+  port: 0

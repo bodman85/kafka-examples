@@ -1,0 +1,15 @@
+= Simplest consumer
+
+This project shows the simplest consumer you can create using Spring for Kafka integration.
+
+Inspect `com.luxoft.lmd.kafka.ConsumerNoConfigApp` and notice:
+
+* The application is annotated with `@EnableKafka` to allow Spring to automatically detect all Kafka related annotations (like `@KafkaListener`)
+
+* we register a Kafka listener using `@KafkaListener`. This annotation can be placed on a method of any bean. Our `ConsumerNoConfigApp` is also a bean. In larger project you will create a separate bean for that purpose.
+
+* `@KafkaListener` annotation specifies the topic we read from (that could be multiple topics also) and consumer group ID. In case you do not specify a consumer group - Spring will auto generate the name of each consumer group and it will be different for every application run (which is something that you probably do not want.)
+
+* A single Kafka enabled application can have multiple listeners, even working for multiple consumer groups.
+
+* `@KafkaListener` annotated method is being called by Spring for Kafka framework with proper arguments. You specify what you need to handle the message and Spring will use dependency injection to serve you those needs (ConsumerRecord, metadata, headers etc.). This is very similar to how Spring MVC is operating.

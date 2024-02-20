@@ -1,0 +1,22 @@
+{
+  "type": "record",
+  "name": "LongList",
+  "namespace": "com.luxoft.lmd.domain.references",
+  "aliases": [
+    "LinkedLongs"
+  ],
+  "fields": [
+    {
+      "name": "value",
+      "type": "long"
+    },
+    {
+      "name": "next",
+      "type": [
+        "null",
+        "LongList"
+      ],
+      "default": null
+    }
+  ]
+}

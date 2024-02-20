@@ -1,0 +1,43 @@
+{
+  "type": "record",
+  "namespace": "com.luxoft.lmd.kafka.streams",
+  "name": "PurchaseEnriched",
+  "fields": [
+    {
+      "name": "customerId",
+      "type": "string"
+    },
+    {
+      "name": "countryCode",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "productId",
+      "type": "string"
+    },
+    {
+      "name": "productType",
+      "type": ["null", "com.luxoft.lmd.kafka.streams.ProductType"],
+      "default": null
+    },
+    {
+      "name": "date",
+      "type": {
+        "type": "long",
+        "logicalType": "local-timestamp-millis"
+      }
+    },
+    {
+      "name": "quantity",
+      "type": "int"
+    },
+    {
+      "name": "price",
+      "type": "double"
+    }
+  ]
+}

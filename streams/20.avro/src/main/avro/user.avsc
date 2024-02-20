@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "User",
+  "namespace": "com.luxoft.lmd.kafka.streams",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string",
+      "doc": "First name"
+    },
+    {
+      "name": "lastName",
+      "type": "string",
+      "doc": "Last name"
+    }
+  ]
+}

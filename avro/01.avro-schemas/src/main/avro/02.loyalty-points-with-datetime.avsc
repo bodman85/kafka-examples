@@ -1,0 +1,26 @@
+{
+  "type": "record",
+  "name": "LoyaltyPoints",
+  "namespace": "com.luxoft.lmd.domain",
+  "fields": [
+    {
+      "name": "customerId",
+      "type": "long"
+    },
+    {
+      "name": "points",
+      "type": "long"
+    },
+    {
+      "name": "purchaseValue",
+      "type": "double"
+    },
+    {
+      "name": "date",
+      "type": {
+        "type": "long",
+        "logicalType": "local-timestamp-millis"
+      }
+    }
+  ]
+}

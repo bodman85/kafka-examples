@@ -1,0 +1,7 @@
+plugins {
+    id 'com.luxoft.lmd.spring-cloud-stream-app'
+}
+
+dependencies {
+    implementation project(":spring-cloud-stream-00-shared")
+}

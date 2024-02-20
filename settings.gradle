@@ -1,0 +1,37 @@
+rootProject.name = 'kafka-examples'
+
+addSubmodules("clientapi")
+addSubmodules("avro")
+addSubmodules("spring")
+addSubmodules("streams")
+addSubmodules("spring-cloud-stream")
+addSubmodules("spring-cloud-stream/01.simple")
+addSubmodules("spring-cloud-stream/02.message")
+addSubmodules("spring-cloud-stream/03.advanced")
+addSubmodules("spring-cloud-stream/04.partitions")
+addSubmodules("spring-cloud-stream/05.multiple-functions")
+addSubmodules("spring-cloud-stream/06.flux")
+
+def addSubmodules(String root) {
+    def projectPattern = ~'^\\d+.*'
+    file(root).eachDir { sub ->
+        def folderName = sub.name
+        if (projectPattern.matcher(folderName).matches()) {
+            addProject(sub)
+        }
+    }
+}
+
+def addProject(File dir) {
+    def path = rootProject.projectDir.toPath().relativize(dir.toPath())
+    def projectName = sanitizePath path.toString()
+    include(projectName)
+    project(":$projectName").projectDir = dir
+}
+
+def sanitizePath(String path) {
+    return path
+            .replace("/", "-")
+            .replace("\\", "-")
+            .replace(".", "-");
+}

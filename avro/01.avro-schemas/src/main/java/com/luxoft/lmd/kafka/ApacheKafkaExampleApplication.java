@@ -1,0 +1,12 @@
+package com.luxoft.lmd.kafka;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ApacheKafkaExampleApplication {
+	public static void main(String[] args) {
+		//SpringApplication.run(ApacheKafkaExampleApplication.class, args);
+
+
+	}
+}

@@ -1,0 +1,3 @@
+plugins {
+    id 'com.luxoft.lmd.spring-kafka-app'
+}

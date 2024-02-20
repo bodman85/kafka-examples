@@ -1,0 +1,21 @@
+spring:
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+      - localhost:9093
+      - localhost:9094
+    properties:
+      schema.registry.url: http://localhost:8085
+    streams:
+      application-id: ktable_simple02_app
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+
+logging:
+  level:
+    org.springframework.kafka.config.StreamsBuilderFactoryBean: debug
+
+server:
+  port: 8081
